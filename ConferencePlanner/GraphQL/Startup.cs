@@ -23,7 +23,7 @@ namespace GraphQL
         public void ConfigureServices(IServiceCollection services)
         {
             services
-                .AddDbContext<ApplicationDbContext>(options =>
+                .AddPooledDbContextFactory<ApplicationDbContext>(options =>
                     options.UseSqlServer(
                         this.configuration.GetSection("ConnectionStrings").GetSection("DefaultConnection").Value,
                         builder => builder.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
