@@ -14,10 +14,12 @@ namespace GraphQL.Data
         }
 
         public DbSet<Speaker> Speakers { get; set; } = default!;
-        public DbSet<Track> Tracks { get; set; } = default!;
-        public DbSet<Attendee> Attendees { get; set; } = default!;
-        public DbSet<Session> Sessions { get; set; } = default!;
 
+        public DbSet<Track> Tracks { get; set; } = default!;
+
+        public DbSet<Attendee> Attendees { get; set; } = default!;
+
+        public DbSet<Session> Sessions { get; set; } = default!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -28,11 +30,11 @@ namespace GraphQL.Data
 
             modelBuilder
                 .Entity<SessionAttendee>()
-                .HasKey(sa => new {sa.SessionId, sa.AttendeeId});
+                .HasKey(sa => new { sa.SessionId, sa.AttendeeId });
 
             modelBuilder
                 .Entity<SessionSpeaker>()
-                .HasKey(ss => new {ss.SessionId, ss.SpeakerId});
+                .HasKey(ss => new { ss.SessionId, ss.SpeakerId });
         }
     }
 }

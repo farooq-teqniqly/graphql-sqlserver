@@ -2,14 +2,13 @@
 // Copyright (c) Teqniqly. All rights reserved.
 // </copyright>
 
-using System.Threading;
-using GraphQL.DataLoader;
-
 namespace GraphQL
 {
     using System.Collections.Generic;
+    using System.Threading;
     using System.Threading.Tasks;
     using GraphQL.Data;
+    using GraphQL.DataLoader;
     using GraphQL.Extensions;
     using HotChocolate;
     using Microsoft.EntityFrameworkCore;

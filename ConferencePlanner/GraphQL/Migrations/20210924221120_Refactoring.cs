@@ -1,8 +1,12 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿// <copyright file="20210924221120_Refactoring.cs" company="Teqniqly">
+// Copyright (c) Teqniqly. All rights reserved.
+// </copyright>
 
 namespace GraphQL.Migrations
 {
+    using System;
+    using Microsoft.EntityFrameworkCore.Migrations;
+
     public partial class Refactoring : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -16,7 +20,7 @@ namespace GraphQL.Migrations
                     FirstName = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
-                    EmailAddress = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    EmailAddress = table.Column<string>(type: "nvarchar(max)", nullable: false),
                 },
                 constraints: table =>
                 {
@@ -29,7 +33,7 @@ namespace GraphQL.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false)
+                    Name = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
                 },
                 constraints: table =>
                 {
@@ -46,7 +50,7 @@ namespace GraphQL.Migrations
                     Abstract = table.Column<string>(type: "nvarchar(4000)", maxLength: 4000, nullable: false),
                     StartTime = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: false),
                     EndTime = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: false),
-                    TrackId = table.Column<int>(type: "int", nullable: true)
+                    TrackId = table.Column<int>(type: "int", nullable: true),
                 },
                 constraints: table =>
                 {
@@ -64,7 +68,7 @@ namespace GraphQL.Migrations
                 columns: table => new
                 {
                     SessionId = table.Column<int>(type: "int", nullable: false),
-                    AttendeeId = table.Column<int>(type: "int", nullable: false)
+                    AttendeeId = table.Column<int>(type: "int", nullable: false),
                 },
                 constraints: table =>
                 {
@@ -88,7 +92,7 @@ namespace GraphQL.Migrations
                 columns: table => new
                 {
                     SessionId = table.Column<int>(type: "int", nullable: false),
-                    SpeakerId = table.Column<int>(type: "int", nullable: false)
+                    SpeakerId = table.Column<int>(type: "int", nullable: false),
                 },
                 constraints: table =>
                 {

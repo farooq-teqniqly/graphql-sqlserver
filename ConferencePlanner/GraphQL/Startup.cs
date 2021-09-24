@@ -2,11 +2,10 @@
 // Copyright (c) Teqniqly. All rights reserved.
 // </copyright>
 
-using GraphQL.DataLoader;
-
 namespace GraphQL
 {
     using GraphQL.Data;
+    using GraphQL.DataLoader;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.EntityFrameworkCore;
