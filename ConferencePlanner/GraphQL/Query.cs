@@ -2,6 +2,9 @@
 // Copyright (c) Teqniqly. All rights reserved.
 // </copyright>
 
+using System.Threading;
+using GraphQL.DataLoader;
+
 namespace GraphQL
 {
     using System.Collections.Generic;
@@ -15,5 +18,10 @@ namespace GraphQL
     {
         [UseApplicationDbContext]
         public Task<List<Speaker>> GetSpeakers([ScopedService] ApplicationDbContext context) => context.Speakers.ToListAsync();
+
+        public Task<Speaker> GetSpeakerAsync(
+            int id,
+            SpeakerByIdDataLoader dataLoader,
+            CancellationToken cancellationToken) => dataLoader.LoadAsync(id, cancellationToken);
     }
 }

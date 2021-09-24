@@ -2,6 +2,8 @@
 // Copyright (c) Teqniqly. All rights reserved.
 // </copyright>
 
+using GraphQL.DataLoader;
+
 namespace GraphQL
 {
     using GraphQL.Data;
@@ -29,12 +31,15 @@ namespace GraphQL
                 .AddPooledDbContextFactory<ApplicationDbContext>(options =>
                     options.UseSqlServer(
                         this.configuration.GetSection("ConnectionStrings").GetSection("DefaultConnection").Value,
-                        builder => builder.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
+                        builder => builder.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName))
+                        .EnableDetailedErrors()
+                        .EnableSensitiveDataLogging());
 
             services
                 .AddGraphQLServer()
                 .AddQueryType<Query>()
-                .AddMutationType<Mutation>();
+                .AddMutationType<Mutation>()
+                .AddDataLoader<SpeakerByIdDataLoader>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
