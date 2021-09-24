@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// <copyright file="AddSpeakerInput.cs" company="Teqniqly">
+// Copyright (c) Teqniqly. All rights reserved.
+// </copyright>
 
 namespace GraphQL
 {
     public record AddSpeakerInput(
-        string Name,
-        string Bio,
-        string WebSite);
+        string name,
+        string bio,
+        string webSite);
 }

@@ -1,19 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using GraphQL.Data;
+﻿// <copyright file="AddSpeakerPayload.cs" company="Teqniqly">
+// Copyright (c) Teqniqly. All rights reserved.
+// </copyright>
 
 namespace GraphQL
 {
+    using GraphQL.Data;
+
     public class AddSpeakerPayload
     {
-        public Speaker Speaker { get; }
-
         public AddSpeakerPayload(Speaker speaker)
         {
             this.Speaker = speaker;
         }
+
+        public Speaker Speaker { get; }
     }
 }

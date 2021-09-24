@@ -1,8 +1,12 @@
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Hosting;
+// <copyright file="Program.cs" company="Teqniqly">
+// Copyright (c) Teqniqly. All rights reserved.
+// </copyright>
 
 namespace GraphQL
 {
+    using Microsoft.AspNetCore.Hosting;
+    using Microsoft.Extensions.Hosting;
+
     public class Program
     {
         public static void Main(string[] args)

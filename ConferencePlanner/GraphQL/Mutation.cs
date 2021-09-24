@@ -1,14 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using GraphQL.Data;
-using GraphQL.Extensions;
-using HotChocolate;
+﻿// <copyright file="Mutation.cs" company="Teqniqly">
+// Copyright (c) Teqniqly. All rights reserved.
+// </copyright>
 
 namespace GraphQL
 {
+    using System.Threading.Tasks;
+    using GraphQL.Data;
+    using GraphQL.Extensions;
+    using HotChocolate;
+
     public class Mutation
     {
         [UseApplicationDbContext]
@@ -18,9 +18,9 @@ namespace GraphQL
         {
             var speaker = new Speaker
             {
-                Name = input.Name,
-                Bio = input.Bio,
-                WebSite = input.WebSite
+                Name = input.name,
+                Bio = input.bio,
+                WebSite = input.webSite,
             };
 
             await context.Speakers.AddAsync(speaker);

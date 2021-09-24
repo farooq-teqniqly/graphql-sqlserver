@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// <copyright file="Session.cs" company="Teqniqly">
+// Copyright (c) Teqniqly. All rights reserved.
+// </copyright>
 
 namespace GraphQL.Data
 {
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+
     public class Session : IEntity
     {
         public int Id { get; set; }
@@ -25,11 +26,12 @@ namespace GraphQL.Data
         [Required]
         public DateTimeOffset? EndTime { get; set; }
 
-        public TimeSpan Duration => EndTime?.Subtract(StartTime ?? EndTime ?? DateTimeOffset.MinValue) ?? TimeSpan.Zero;
+        public TimeSpan Duration => this.EndTime?.Subtract(this.StartTime ?? this.EndTime ?? DateTimeOffset.MinValue) ?? TimeSpan.Zero;
 
         public int? TrackId { get; set; }
 
         public ICollection<SessionSpeaker> SessionSpeakers { get; set; } = new List<SessionSpeaker>();
+
         public ICollection<SessionAttendee> SessionAttendees { get; set; } = new List<SessionAttendee>();
 
         public Track? Track { get; set; }

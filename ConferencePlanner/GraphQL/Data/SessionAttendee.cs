@@ -1,10 +1,17 @@
-﻿namespace GraphQL.Data
+﻿// <copyright file="SessionAttendee.cs" company="Teqniqly">
+// Copyright (c) Teqniqly. All rights reserved.
+// </copyright>
+
+namespace GraphQL.Data
 {
     public class SessionAttendee
     {
         public int SessionId { get; set; }
+
         public int AttendeeId { get; set; }
+
         public Session? Session { get; set; }
+
         public Attendee? Attendee { get; set; }
     }
 }

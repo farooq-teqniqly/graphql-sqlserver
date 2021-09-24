@@ -1,8 +1,12 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿// <copyright file="Speaker.cs" company="Teqniqly">
+// Copyright (c) Teqniqly. All rights reserved.
+// </copyright>
 
 namespace GraphQL.Data
 {
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+
     public class Speaker : IEntity
     {
         [Required]
@@ -14,6 +18,7 @@ namespace GraphQL.Data
 
         [StringLength(1000)]
         public string? WebSite { get; set; }
+
         public int Id { get; set; }
 
         public ICollection<SessionSpeaker> SessionSpeakers { get; set; } = new List<SessionSpeaker>();

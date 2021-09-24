@@ -1,7 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿// <copyright file="20210923221500_Initial.cs" company="Teqniqly">
+// Copyright (c) Teqniqly. All rights reserved.
+// </copyright>
 
 namespace GraphQL.Migrations
 {
+    using Microsoft.EntityFrameworkCore.Migrations;
+
     public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -14,7 +18,7 @@ namespace GraphQL.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
                     Bio = table.Column<string>(type: "nvarchar(4000)", maxLength: 4000, nullable: true),
-                    WebSite = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: true)
+                    WebSite = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: true),
                 },
                 constraints: table =>
                 {
