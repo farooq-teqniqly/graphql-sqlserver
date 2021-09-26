@@ -7,13 +7,11 @@ namespace GraphQL.DataLoader
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Text;
     using System.Threading;
     using System.Threading.Tasks;
     using GraphQL.Data;
     using GreenDonut;
     using HotChocolate.DataLoader;
-    using Microsoft.AspNetCore.Server.IIS.Core;
     using Microsoft.EntityFrameworkCore;
 
     public class SessionByIdDataLoader : BatchDataLoader<int, Session>
