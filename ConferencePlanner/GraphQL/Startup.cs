@@ -39,9 +39,7 @@ namespace GraphQL
                 .AddGraphQLServer()
                 .AddQueryType<Query>()
                 .AddMutationType<Mutation>()
-                .AddType<SpeakerType>()
-                .AddDataLoader<SpeakerByIdDataLoader>()
-                .AddDataLoader<SessionByIdDataLoader>();
+                .AddDataLoader<SpeakerByIdDataLoader>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
