@@ -6,6 +6,7 @@ namespace GraphQL
 {
     using GraphQL.Data;
     using GraphQL.DataLoader;
+    using GraphQL.Types;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.EntityFrameworkCore;
@@ -38,7 +39,9 @@ namespace GraphQL
                 .AddGraphQLServer()
                 .AddQueryType<Query>()
                 .AddMutationType<Mutation>()
-                .AddDataLoader<SpeakerByIdDataLoader>();
+                .AddType<SpeakerType>()
+                .AddDataLoader<SpeakerByIdDataLoader>()
+                .AddDataLoader<SessionByIdDataLoader>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
