@@ -1,0 +1,12 @@
+{
+  "ServerUri": "http://localhost:9000",
+  "Organization": null,
+  "ProjectKey": "conference-planner",
+  "ProjectName": "conference-planner",
+  "Profiles": {
+    "CSharp": {
+      "ProfileKey": "AXwZJYbs7Zpxm4Qjyyru",
+      "ProfileTimestamp": "2021-09-24T18:51:02Z"
+    }
+  }
+}

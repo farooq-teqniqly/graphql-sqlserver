@@ -8,7 +8,7 @@ namespace GraphQL.Common
 
     public abstract class Payload
     {
-        public Payload(IReadOnlyList<UserError>? errors = null)
+        protected Payload(IReadOnlyList<UserError>? errors = null)
         {
             this.Errors = errors;
         }
